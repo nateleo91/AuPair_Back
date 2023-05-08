@@ -26,11 +26,12 @@ SECRET_KEY = 'django-insecure-v)1-xhnj^i6#&vmvs!x3ade%m29(v91u@)srr!&-gwkn&4k&2w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
+    'http://localhost',
+    'http://127.0.0.1',
+    'http://0.0.0.0',
 ]
 CORS_ALLOW_CREDENTIALS = True
 
@@ -92,7 +93,7 @@ DATABASES = {
 }
 
 ## User model
-AUTH_USER_MODEL = 'user_api_AppUser'
+AUTH_USER_MODEL = 'user_api.AppUser'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
@@ -140,6 +141,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
